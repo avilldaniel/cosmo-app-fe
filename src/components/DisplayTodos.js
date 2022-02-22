@@ -3,7 +3,7 @@ import TodoAPI from "../apis/TodoAPI";
 import { TodoContext } from "../context/TodoContext";
 
 const DisplayTodos = () => {
-  const [todo, setTodo] = useContext(TodoContext);
+  const { todo, setTodo } = useContext(TodoContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -11,7 +11,7 @@ const DisplayTodos = () => {
         // GET request for all todos
         // baseURL: http://localhost:4000/api/v1/todos
         const response = await TodoAPI.get("/"); // adds '/' to baseURL
-        // console.log('response.data:', response.data);
+        // console.log('response', response);
         setTodo(response.data);
         // console.log("todo:", todo);
       } catch (err) {
@@ -88,7 +88,7 @@ const DisplayTodos = () => {
           className="divide-y-2 divide-indigo-500 divide-opacity-60 hover:divide-indigo-900
           font-semibold text-2xl"
         >
-          {todo.map(listTodos)}
+          {todo && todo.map(listTodos)}
         </ul>
       </div>
     </div>

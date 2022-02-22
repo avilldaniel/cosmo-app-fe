@@ -1,15 +1,25 @@
-import React, { useState, useContext } from 'react';
-import axios from 'axios';
+import React, { useContext, useState } from 'react';
+import TodoAPI from '../apis/TodoAPI';
 import { TodoContext } from '../context/TodoContext';
 
 export default function WriteTodo() {
-  const [todo, setTodo] = useContext(TodoContext);
+  const { addedTodo } = useContext(TodoContext);
+  const [task, setTask] = useState("");
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-
-    // handle POST request
-    
+    try {
+      // handle POST request
+      // console.log(task);
+      const response = await TodoAPI.post('/', {
+        todo: task
+      });
+      // console.log(response.data);
+      addedTodo(response.data);
+      setTask("");
+    } catch (err) {
+      console.error(err.message);
+    }
   };
   
 
@@ -19,7 +29,8 @@ export default function WriteTodo() {
           <form action="submit" onSubmit={handleSubmit}>
             <input
               type="text"
-              onChange={e => setTodo(e.target.value)}
+              value={task}
+              onChange={e => setTask(e.target.value)}
               placeholder='Ex. Daniel clean cage 2.'
               className='w-96 pb-1 pt-2 border-b-2 border-gray-200 outline-none focus:border-gray-200
               text-white bg-transparent text-center placeholder-slate-400
