@@ -3,7 +3,7 @@ import TodoAPI from '../apis/TodoAPI';
 import { TodoContext } from '../context/TodoContext';
 
 export default function WriteTodo() {
-  const { addedTodo } = useContext(TodoContext);
+  const { updatedTodos } = useContext(TodoContext);
   const [task, setTask] = useState("");
 
   const handleSubmit = async e => {
@@ -15,7 +15,7 @@ export default function WriteTodo() {
         todo: task
       });
       // console.log(response.data);
-      addedTodo(response.data);
+      updatedTodos(response.data);
       setTask("");
     } catch (err) {
       console.error(err.message);

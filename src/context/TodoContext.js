@@ -6,15 +6,15 @@ export const TodoContext = createContext();
 // provider
 export const TodoProvider = (props) => {
   // used to store all our todos
-  const [todo, setTodo] = useState([]);
+  const [todos, setTodos] = useState([]);
 
   // used when new todo is added, so as to re-render page
-  const addedTodo = (task) => {
-    setTodo([...todo, task]);
+  const updatedTodos = (task) => {
+    setTodos([...todos, task]);
   }
 
   return (
-    <TodoContext.Provider value={{ todo, setTodo, addedTodo }}>
+    <TodoContext.Provider value={{ todos, setTodos, updatedTodos }}>
       {props.children}
     </TodoContext.Provider>
   )
