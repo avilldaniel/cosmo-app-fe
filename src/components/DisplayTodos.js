@@ -24,9 +24,11 @@ const DisplayTodos = () => {
   const handleDelete = async (id) => {
     try {
       const res = await TodoAPI.delete(`/${id}`);
-      setTodos(todos.filter(todo => {
-        return todo.id !== id
-      }))
+      setTodos(
+        todos.filter((todo) => {
+          return todo.id !== id;
+        })
+      );
     } catch (err) {
       console.error(err.message);
     }
@@ -54,8 +56,8 @@ const DisplayTodos = () => {
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              <polygon points="14 2 18 6 7 17 3 17 3 13 14 2"></polygon>
+              <line x1="3" y1="22" x2="21" y2="22"></line>
             </svg>
           </button>
 
@@ -71,11 +73,11 @@ const DisplayTodos = () => {
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <polygon points="14 2 18 6 7 17 3 17 3 13 14 2"></polygon>
-              <line x1="3" y1="22" x2="21" y2="22"></line>
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
             </svg>
           </button>
-          
+
           <button onClick={() => handleDelete(task.id)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
