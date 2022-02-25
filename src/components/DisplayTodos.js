@@ -1,8 +1,15 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import TodoAPI from "../apis/TodoAPI";
 import { TodoContext } from "../context/TodoContext";
+import DisplayModal from "./DisplayModal";
 
 const DisplayTodos = () => {
+  // const [showModal, setShowModal] = useState(false);
+  // const [updateID, setUpdateID] = useState('');
+  const [modal, setModal] = useState({
+    showModal: false,
+    updateID: ''
+  })
   const { todos, setTodos } = useContext(TodoContext);
 
   useEffect(() => {
@@ -23,7 +30,7 @@ const DisplayTodos = () => {
 
   const handleDelete = async (id) => {
     try {
-      const res = await TodoAPI.delete(`/${id}`);
+      await TodoAPI.delete(`/${id}`);
       setTodos(
         todos.filter((todo) => {
           return todo.id !== id;
@@ -44,7 +51,7 @@ const DisplayTodos = () => {
       >
         {task.todo}
         <div className="flex justify-between w-24">
-          <button onClick={null}>
+          <button onClick={() => setModal({showModal: true, updateID: task.id})}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -60,6 +67,9 @@ const DisplayTodos = () => {
               <line x1="3" y1="22" x2="21" y2="22"></line>
             </svg>
           </button>
+          {/*------------------------------------------------------------------------------*/}
+          {modal.showModal ? <DisplayModal id={modal.updateID} setModal={setModal} /> : null}
+          {/*------------------------------------------------------------------------------*/}
 
           <button onClick={null}>
             <svg
