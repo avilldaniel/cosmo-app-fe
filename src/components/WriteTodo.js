@@ -10,7 +10,6 @@ export default function WriteTodo() {
     e.preventDefault();
     try {
       // handle POST request
-      // console.log(task);
       const response = await TodoAPI.post('/', {
         todo: task
       });
@@ -28,6 +27,7 @@ export default function WriteTodo() {
         <div className="mb-3">
           <form action="submit" onSubmit={handleSubmit}>
             <input
+              autoFocus
               type="text"
               value={task}
               onChange={e => setTask(e.target.value)}

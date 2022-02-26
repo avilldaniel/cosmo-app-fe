@@ -4,11 +4,10 @@ import { TodoContext } from "../context/TodoContext";
 import DisplayModal from "./DisplayModal";
 
 const DisplayTodos = () => {
-  // const [showModal, setShowModal] = useState(false);
-  // const [updateID, setUpdateID] = useState('');
   const [modal, setModal] = useState({
     showModal: false,
-    updateID: ''
+    updateID: '',
+    updateTask: '',
   })
   const { todos, setTodos } = useContext(TodoContext);
 
@@ -18,9 +17,7 @@ const DisplayTodos = () => {
         // GET request for all todos
         // baseURL: http://localhost:4000/api/v1/todos
         const response = await TodoAPI.get("/"); // adds '/' to baseURL
-        // console.log('response', response);
         setTodos(response.data);
-        // console.log("todos:", todos);
       } catch (err) {
         console.error(err.message);
       }
@@ -51,7 +48,7 @@ const DisplayTodos = () => {
       >
         {task.todo}
         <div className="flex justify-between w-24">
-          <button onClick={() => setModal({showModal: true, updateID: task.id})}>
+          <button onClick={() => setModal({showModal: true, updateID: task.id, updateTask: task.todo})}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -67,9 +64,7 @@ const DisplayTodos = () => {
               <line x1="3" y1="22" x2="21" y2="22"></line>
             </svg>
           </button>
-          {/*------------------------------------------------------------------------------*/}
-          {modal.showModal ? <DisplayModal id={modal.updateID} setModal={setModal} /> : null}
-          {/*------------------------------------------------------------------------------*/}
+          {modal.showModal ? <DisplayModal id={modal.updateID} todo={modal.updateTask} setModal={setModal} /> : null}
 
           <button onClick={null}>
             <svg
