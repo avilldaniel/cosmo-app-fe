@@ -6,9 +6,9 @@ import DisplayModal from "./DisplayModal";
 const DisplayTodos = () => {
   const [modal, setModal] = useState({
     showModal: false,
-    updateID: '',
-    updateTask: '',
-  })
+    updateID: "",
+    updateTask: "",
+  });
   const { todos, setTodos } = useContext(TodoContext);
 
   useEffect(() => {
@@ -42,20 +42,28 @@ const DisplayTodos = () => {
     return (
       <li
         key={task.id}
-        className="flex justify-between py-4 px-3
+        className="flex justify-between p-4
             hover:bg-indigo-400 hover:bg-opacity-40
             hover:rounded-lg"
       >
         {task.todo}
-        <div className="flex justify-between w-24">
-          <button onClick={() => setModal({showModal: true, updateID: task.id, updateTask: task.todo})}>
+        <div className="flex justify-between w-14">
+          <button
+            onClick={() =>
+              setModal({
+                showModal: true,
+                updateID: task.id,
+                updateTask: task.todo,
+              })
+            }
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#ffffff"
+              stroke="#c8c8c8"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -64,24 +72,13 @@ const DisplayTodos = () => {
               <line x1="3" y1="22" x2="21" y2="22"></line>
             </svg>
           </button>
-          {modal.showModal ? <DisplayModal id={modal.updateID} todo={modal.updateTask} setModal={setModal} /> : null}
-
-          <button onClick={null}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#ffffff"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-              <polyline points="22 4 12 14.01 9 11.01"></polyline>
-            </svg>
-          </button>
+          {modal.showModal ? (
+            <DisplayModal
+              id={modal.updateID}
+              todo={modal.updateTask}
+              setModal={setModal}
+            />
+          ) : null}
 
           <button onClick={() => handleDelete(task.id)}>
             <svg
@@ -90,7 +87,7 @@ const DisplayTodos = () => {
               height="24"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#c8c8c8"
+              stroke="#ca152b"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -107,11 +104,12 @@ const DisplayTodos = () => {
   };
 
   return (
-    <div className="flex justify-center mt-10">
-      <div className="justify-center w-full bg-indigo-400 bg-opacity-0 rounded-lg lg:w-3/4">
+    <div className="flex justify-center mt-4">
+      <div className="bg-indigo-400 bg-opacity-0 rounded-lg lg:w-3/4 xl:max-w-4xl">
         <ul
           className="divide-y-2 divide-indigo-500 divide-opacity-60 hover:divide-indigo-900
-          font-semibold text-2xl"
+          font-script text-2xl text-slate-300
+          "
         >
           {todos && todos.map(listTodos)}
         </ul>

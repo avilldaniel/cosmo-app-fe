@@ -20,11 +20,10 @@ export default function WriteTodo() {
       console.error(err.message);
     }
   };
-  
 
   return (
-      <div className="flex justify-center bg-gray-900">
-        <div className="mb-3">
+      <div className="flex justify-center">
+        <div className="mb-3 mt-8">
           <form action="submit" onSubmit={handleSubmit}>
             <input
               autoFocus
@@ -32,9 +31,9 @@ export default function WriteTodo() {
               value={task}
               onChange={e => setTask(e.target.value)}
               placeholder='Ex. Daniel clean cage 2.'
-              className='w-96 pb-1 pt-2 border-b-2 border-gray-200 outline-none focus:border-gray-200
-              text-white bg-transparent text-center placeholder-slate-400
-              caret-fuchsia-500'
+              className='pb-1 pt-2 border-b-2 border-gray-200 outline-none focus:border-gray-200
+              text-white bg-transparent text-center placeholder-slate-300 text-3xl
+              caret-pink-600 flex sm:w-96 lg:w-80vh'
             />
           </form>
 

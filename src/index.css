@@ -2,7 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* For hiding number arrows on Login Page */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For WriteTodo placeholder styles */
+input::-webkit-input-placeholder {
+  color: black; /*Change the placeholder color*/
+  opacity: 0.3; /*Change the opacity between 0 and 1 */
+}
+
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -14,4 +27,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
