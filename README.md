@@ -12,7 +12,8 @@ of to-do's communicates from a Postgres database\
 connected to a Node.js app ran and deployed on Heroku.
 
 Frameworks, libraries, and other technologies used:\
-PERN stack, React Router, Axios, Tailwind, Node-Postgres
+PERN stack, React Router, Axios, Tailwind, Node-Postgres,\
+Cors, Nodemon, dotenv, Vercel, Heroku
 
 ## Available Scripts
 
