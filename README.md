@@ -4,7 +4,6 @@
 
 ### [To-do list](https://cosmo-assets.vercel.app/todo)
 
-![cosmo-to-do-1000px](https://user-images.githubusercontent.com/90011911/157134225-dee53af6-4fc3-41d1-8178-0a1f98fc6418.gif)
 ![cosmo-to-do-new](https://user-images.githubusercontent.com/90011911/157134256-7b5281ad-3e87-493e-9459-5419852ebc7b.gif)
 
 A to-do application which lets you create,\
