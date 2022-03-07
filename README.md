@@ -1,6 +1,18 @@
-# Getting Started with Create React App
+# Website built for the IT Assets team of the Cosmopolitan of Las Vegas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Apps
+
+### To-do list
+
+{insert GIF here}
+
+A to-do application which lets you create,\
+delete, and edit a list of to-do's. The list\
+of to-do's communicates from a Postgres database\
+connected to a Node.js app ran and deployed on Heroku.
+
+Frameworks, libraries, and other technologies used:\
+PERN stack, React Router, Axios, Tailwind, Node-Postgres
 
 ## Available Scripts
 
