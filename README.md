@@ -4,6 +4,8 @@
 
 ### [To-do list](https://cosmo-assets.vercel.app/todo)
 
+![cosmo-to-do](https://user-images.githubusercontent.com/90011911/157133585-f0043766-242d-4425-b500-153332eb7085.gif)
+
 A to-do application which lets you create,\
 delete, and edit a list of to-do's. The list\
 of to-do's communicates from a Postgres database\
