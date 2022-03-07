@@ -4,9 +4,7 @@
 
 ### [To-do list](https://cosmo-assets.vercel.app/todo)
 
-![cosmo-to-do](https://user-images.githubusercontent.com/90011911/157133585-f0043766-242d-4425-b500-153332eb7085.gif)
-![cosmo-to-do](https://user-images.githubusercontent.com/90011911/157133868-884c7834-5016-45b9-9ae1-f15a738736ad.gif)
-
+![cosmo-to-do-1000px](https://user-images.githubusercontent.com/90011911/157134225-dee53af6-4fc3-41d1-8178-0a1f98fc6418.gif)
 
 A to-do application which lets you create,\
 delete, and edit a list of to-do's. The list\
