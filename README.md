@@ -2,9 +2,7 @@
 
 ## Apps
 
-### To-do list
-
-{insert GIF here}
+### [To-do list](https://cosmo-assets.vercel.app/todo)
 
 A to-do application which lets you create,\
 delete, and edit a list of to-do's. The list\
