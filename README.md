@@ -2,7 +2,7 @@
 
 ## Apps
 
-### [To-do list](https://cosmo-assets.vercel.app/todo)
+### [To-do list](https://it-cosmo.vercel.app/todo)
 
 ![cosmo-to-do-new](https://user-images.githubusercontent.com/90011911/157134256-7b5281ad-3e87-493e-9459-5419852ebc7b.gif)
 
