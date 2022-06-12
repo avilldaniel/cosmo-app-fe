@@ -6,14 +6,15 @@
 
 ![cosmo-to-do-new](https://user-images.githubusercontent.com/90011911/157134256-7b5281ad-3e87-493e-9459-5419852ebc7b.gif)
 
-A to-do application which lets you create,\
-delete, and edit a list of to-do's. The list\
-of to-do's communicates from a Postgres database\
-connected to a Node.js app ran and deployed on Heroku.
+A to-do application which lets you create, delete, and edit a list of to-do's. The list of to-do's communicates with a live Node server connected to a PostgreSQL database deployed on Heroku.
 
-Frameworks, libraries, and other technologies used:\
-PERN stack, React Router, Axios, Tailwind, Node-Postgres,\
-Cors, Nodemon, dotenv, Vercel, Heroku
+Frameworks, libraries, and other technologies used:
+- PERN stack
+- React Router
+- Axios
+- Tailwind
+- Node-Postgres
+- Cors, Nodemon, dotenv, Vercel, Heroku
 
 ## Available Scripts
 
